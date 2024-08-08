@@ -21,8 +21,8 @@ Clone the repository:
 
 bash
 
-git clone https://github.com/yourusername/medicinal-plant-identification.git
-cd medicinal-plant-identification
+git clone https://github.com/limitlessBrain1/Leaf-Disease-Detection.git
+cd Leaf-Disease-Detection
 Install the required dependencies:
 
 bash
