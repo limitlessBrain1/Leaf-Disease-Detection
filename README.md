@@ -1,5 +1,5 @@
 
-# Medicinal Plant Detection Using Deep Learning
+# Medicinal Plant Detection
 
 ## Project Overview
 This project focuses on the **detection of medicinal plants** and their potential to cure diseases using **image processing** and **deep learning techniques**. The goal is to automate the identification of medicinal plants based on their leaf structures. The project employs deep learning models, particularly the **Convolutional Neural Network (CNN)**, to enhance accuracy in plant identification.
