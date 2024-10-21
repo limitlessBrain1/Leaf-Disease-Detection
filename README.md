@@ -1,89 +1,131 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicinal Plant Identification</title>
-</head>
-<body>
-    <h1>Medicinal Plant Identification and Classification</h1>
-    <p>This project focuses on the identification and classification of medicinal plants using image processing techniques and deep learning models. The system leverages advanced Convolutional Neural Networks (CNN) to accurately recognize and classify various medicinal plant species based on their leaf features.</p>
+# Medicinal Plant Detection Using Deep Learning
 
-    <h2>Features</h2>
-    <ul>
-        <li><strong>High Accuracy</strong>: Achieved up to 99.66% accuracy in identifying medicinal plants using fine-tuned CNN models.</li>
-        <li><strong>Multiple Models</strong>: Implemented and compared different deep learning architectures such as VGG16, MobileNet, and DenseNet for optimal performance.</li>
-        <li><strong>Data Augmentation</strong>: Utilized data augmentation techniques to enhance the training dataset and improve model generalization.</li>
-        <li><strong>Feature Fusion</strong>: Combined features from multiple CNN models to achieve better prediction accuracy.</li>
-    </ul>
+## Project Overview
+This project focuses on the **detection of medicinal plants** and their potential to cure diseases using **image processing** and **deep learning techniques**. The goal is to automate the identification of medicinal plants based on their leaf structures. The project employs deep learning models, particularly the **Convolutional Neural Network (CNN)**, to enhance accuracy in plant identification.
 
-    <h2>Technologies Used</h2>
-    <ul>
-        <li>Programming Language: Python</li>
-        <li>Deep Learning Framework: TensorFlow, Keras</li>
-        <li>Models Implemented: VGG16, MobileNet, DenseNet, VGG19</li>
-        <li>Image Processing: OpenCV, PIL</li>
-        <li>Development Tools: Jupyter Notebook, Google Colab</li>
-    </ul>
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Models Used](#models-used)
+- [Dataset](#dataset)
+- [Results](#results)
+- [Applications](#applications)
+- [Future Work](#future-work)
+- [System Architecture](#System-Architecture)
+- [Implementation](#Implementation)
+- [License](#license)
 
-    <h2>Installation</h2>
-    <p>To run this project locally, follow these steps:</p>
-    <ol>
-        <li>Clone the repository:</li>
-        <pre><code>git clone https://github.com/limitlessBrain1/Leaf-Disease-Detection.git<br>
-cd Leaf-Disease-Detection</code></pre>
-        <li>Install the required dependencies:</li>
-        <pre><code>pip install -r requirements.txt</code></pre>
-        <li>Download or prepare your dataset of medicinal plant images.</li>
-        <li>Run the training script:</li>
-        <pre><code>python train.py</code></pre>
-        <li>To evaluate the model, use:</li>
-        <pre><code>python evaluate.py</code></pre>
-    </ol>
+## Features
+- Automatic **identification of medicinal plants** from leaf images.
+- Integration of **deep learning models** like CNN, VGG-19, and DenseNet for better accuracy.
+- Image preprocessing and augmentation for enhanced model performance.
+- **Voice recognition** feature for easier access, especially for users with visual impairments.
+- **Regional language support** for user-friendly interactions.
+  
+## Installation
 
-    <h2>Usage</h2>
-    <ul>
-        <li><strong>Training</strong>: The <code>train.py</code> script trains the CNN models using the provided dataset. It also includes options for data augmentation and hyperparameter tuning.</li>
-        <li><strong>Evaluation</strong>: The <code>evaluate.py</code> script evaluates the trained models and provides accuracy metrics.</li>
-        <li><strong>Prediction</strong>: Use the <code>predict.py</code> script to classify new plant images. Simply pass the image file path as an argument.</li>
-    </ul>
+### Prerequisites
+- Python 3.x
+- TensorFlow, Keras, OpenCV, NumPy, Flask, and other dependencies mentioned in `requirements.txt`.
 
-    <h2>Project Structure</h2>
-    <pre><code>
-├── data/
-│   ├── train/            # Training data
-│   └── test/             # Testing data
-├── models/
-│   ├── vgg16_model.h5    # Saved VGG16 model
-│   ├── mobilenet_model.h5 # Saved MobileNet model
-│   └── densenet_model.h5  # Saved DenseNet model
-├── notebooks/
-│   ├── Data_Preprocessing.ipynb
-│   └── Model_Training.ipynb
-├── scripts/
-│   ├── train.py          # Training script
-│   ├── evaluate.py       # Evaluation script
-│   └── predict.py        # Prediction script
-├── requirements.txt      # Python dependencies
-└── README.md             # Project README
-    </code></pre>
+### Clone the Repository
+```bash
+git clone https://github.com/your_username/medicinal-plant-detection.git
+cd medicinal-plant-detection
+```
 
-    <h2>Results</h2>
-    <p>The models were tested on a dataset of medicinal plant images and demonstrated excellent performance, with the DenseNet model achieving the highest accuracy. Detailed results and analysis can be found in the <code>notebooks/Model_Training.ipynb</code> file.</p>
+### Install Dependencies
+Install the required libraries using pip:
+```bash
+pip install -r requirements.txt
+```
 
-    <h2>Future Work</h2>
-    <ul>
-        <li>Model Optimization: Further optimization of the CNN models to reduce computational complexity.</li>
-        <li>Real-Time Application: Implementation of a mobile application for real-time medicinal plant identification.</li>
-        <li>Expanded Dataset: Increase the dataset to include more diverse plant species.</li>
-    </ul>
+### Pre-trained Models
+If you're using pre-trained models, place them in the `models/` directory. Otherwise, you can train the models from scratch (see [Training](#training)).
 
-    <h2>Contributing</h2>
-    <p>Contributions are welcome! Please feel free to submit a pull request or open an issue if you have suggestions or improvements.</p>
+### Dataset
+The dataset should contain folders for each plant species, with images of the leaves. You can download publicly available datasets or use your own collection. Place the dataset in the `data/` directory.
 
-    <h2>License</h2>
-    <p>This project is licensed under the MIT License.</p>
-</body>
-</html>
+## Usage
 
+### Running the Model
+To classify medicinal plants from an image:
+```bash
+python classify.py --image_path path_to_image
+```
+
+### Voice Interaction
+You can interact with the system via voice commands for plant identification. This requires a microphone and access to Google Speech Recognition API:
+```bash
+python voice_interface.py
+```
+
+### Training the Model
+To train the model from scratch:
+```bash
+python train.py --dataset_path path_to_your_dataset
+```
+
+## Models Used
+This project uses several deep learning architectures, including:
+- **VGG-19**: A deep learning model that has proven effective for image classification tasks.
+- **DenseNet**: A CNN architecture where each layer is connected to every other layer to improve accuracy and reduce training time.
+- **Custom CNN**: A CNN model designed specifically for medicinal plant identification.
+
+## Dataset
+The dataset used in this project contains images of medicinal plant leaves from various plant species. Leaf features such as shape, color, and texture are used for classification. The dataset can be pre-processed by resizing, normalization, and data augmentation techniques.
+
+- **Data Augmentation Techniques**: Rotation, flipping, scaling, and color adjustments were applied to artificially increase the size of the dataset and improve model robustness.
+
+## Results
+The trained models achieved the following accuracies on test datasets:
+- **VGG-19 Model Accuracy**: 95.4%
+- **DenseNet Model Accuracy**: 96.2%
+- **Custom CNN Model Accuracy**: 94.7%
+
+The DenseNet model performed the best due to its ability to connect layers and share learned features. Data augmentation and hyperparameter tuning were essential to improving accuracy.
+
+## Applications
+This project has a wide range of practical applications, including:
+- **Healthcare and Medicine**: Accurate identification of medicinal plants to help healthcare professionals in herbal treatments.
+- **Botanical Research**: Support for botanists and researchers in identifying and documenting medicinal plants.
+- **Agriculture**: Helps farmers identify and cultivate medicinal plants.
+- **Education**: A tool for educating students and researchers about medicinal plants and deep learning techniques.
+
+## Future Work
+Future enhancements for the project could include:
+- Expanding the dataset to cover a larger variety of medicinal plants.
+- Improving the accuracy of the voice recognition feature, especially for regional languages.
+- Developing a mobile application that integrates real-time plant identification using camera input.
+- Incorporating more advanced techniques such as **Transfer Learning** and **Ensemble Learning** to further improve accuracy.
+
+## System Architecture
+
+The system architecture of the medicinal plant detection system is illustrated below:
+
+![System Architecture](images/system_architecture.png)
+
+The architecture consists of the following key components:
+- **Off-line Training and Testing**: This component is responsible for training deep learning models using plant leaf image datasets. Images are pre-processed before training.
+- **Model Deployment**: The trained model is deployed to a temporary database for use in real-time plant identification.
+- **Mobile Front-End**: Users capture plant images via a mobile application, and the model identifies the plant species, providing information and geo-mapping feedback.
+- **Repository**: A repository of plants’ images, data, and trained models is maintained for future use and updates.
+
+## Implementation
+
+The following image showcases the implementation of the plant detection system, where users can upload plant images for recognition:
+
+![Plant Detection Implementation](images/plant_detection_implementation1.png)
+![Plant Detection Implementation](images/plant_detection_implementation2.png)
+
+The system allows users to:
+- Select images from the local machine or mobile device.
+- Upload the image to the deep learning model for plant species detection.
+- View predictions and relevant information about the plant.
+
+
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
