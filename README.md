@@ -117,8 +117,8 @@ The architecture consists of the following key components:
 
 The following image showcases the implementation of the plant detection system, where users can upload plant images for recognition:
 
-![Plant Detection Implementation](images/plant_detection_implementation1.png)
-![Plant Detection Implementation](images/plant_detection_implementation2.png)
+![Plant Detection Implementation](images/imagesplant_detection_implementation1.png)
+![Plant Detection Implementation](images/imagesplant_detection_implementation2.png)
 
 The system allows users to:
 - Select images from the local machine or mobile device.
